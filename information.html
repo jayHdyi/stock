@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Church Members Management</title>
+  <link rel="stylesheet" href="css/information.css">
+</head>
+<body onload="createChurchDivs(); loadAllInfo();">
+
+  <!-- Menu and Form Toggle Buttons -->
+  <button id="menu-toggle" onclick="toggleSidebar()">☰ Churches</button>
+  <button id="form-toggle" onclick="toggleForm()">➕ Add Member</button>
+
+  <!-- Sidebar (Churches) -->
+  <div class="sidebar" id="sidebar">
+    <h2>🔐 Admin Login</h2>
+    <input type="password" id="admin-password" placeholder="Enter Admin Password">
+    <button onclick="loginAsAdmin()">Login as Admin</button>
+    <a href="homepage.php">BackPage</a>
+  </div>
+  
+
+  <!-- Slide-in Member Form -->
+  <div id="member-form" class="form-slide">
+    <button id="close-form" onclick="toggleForm()">❌ Close</button>
+    <h2>Enter Member Info</h2>
+
+    <label>Church:</label>
+    <select id="church">
+      <option value="">-- Select Church --</option>
+      <option value="Church 1">Bulaong</option>
+      <option value="Church 2">Cornerstone</option>
+      <option value="Church 3">Emmanuel</option>
+      <option value="Church 4">Contry Garden</option>
+      <option value="Church 5">Newland</option>
+      <option value="Church 6">New Galilie</option>
+      <option value="Church 7">Paopao</option>
+      <option value="Church 8">New Canaan</option>
+      <option value="Church 9">Nearest Heaven</option>
+    </select>
+
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Age:</label>
+    <input type="number" id="age">
+
+    <label>Birthday:</label>
+    <input type="date" id="birthday">
+
+    <label>Gender:</label>
+    <select id="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label>Position:</label>
+    <input type="text" id="position">
+
+    <label>Picture:</label>
+    <input type="file" id="photo" accept="image/*">
+
+    <button class="save-btn" onclick="saveInfo()">💾 Save Member Info</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h2>Member Info Grouped by Church</h2>
+    <div id="all-churches"></div>
+    <div id="admin-clear-btn"></div>
+  </div>
+
+  <script src="js/informtion.js"></script>
+
+</body>
+</html>
